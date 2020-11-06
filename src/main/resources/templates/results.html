@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Presents</title>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1 style= "font-family:Luckiest Guy">Presents List</h1>
+<form>
+<table>
+<font style= "font-family:Luckiest Guy">
+<tr th:each="currentPresents : ${presents}">
+<td th:text="${currentPresents.id}" />
+<td th:text="${currentPresents.name}"/>
+<td th:text="${currentPresents.relationship}"/>
+<td th:text="${currentPresents.holidayParty.eventName}"/>
+<td th:text="${currentPresents.holidayParty.street}"/>
+<td th:text="${currentPresents.holidayParty.city}"/>
+<td th:text="${currentPresents.holidayParty.state}"/>
+<td><a th:href="@{/edit/{id}(id=${currentPresents.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentPresents.id})}">Delete</a></td>
+</tr>
+</font>
+</table>
+</form>
+<a href="../inputPresents">Add a new Present</a>
+</body>
+</html>

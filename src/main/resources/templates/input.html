@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Presents</title>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1 style= "font-family:Luckiest Guy">Enter the info below:</h1>
+<form th:object="${newPresents}" th:action="@{/inputPresents}" method='POST'>
+<font style= "font-family:Luckiest Guy">Name: <input name="name" size="20" ><br />
+Present: <input name="present" size="10" ><br />
+Relationship: <input name="relationship" size="10" ><br />
+Event Name: <input name="eventName" size="10" ><br />
+Street: <input name="street" size="10" ><br />
+City: <input name="city" size="10"><br />
+State: <input name="state" size="10" ><br />
+<input name="submit" type="submit" value="submit"/>
+</form>
+<br>
+<a href="viewAll">View All Presents</a></font>
+</body>
+</html>
